@@ -43,4 +43,18 @@ public class GreetingApiTest extends TestBase {
                 .contentType(ContentType.JSON)
                 .body("content", equalTo("Hello, " + name + "!"));
     }
+
+    @Test
+    @DisplayName("API-NEGF-001: Should return status 404 for a non-existent path")
+    void testGetNonExistentPath() {
+        final String invalidPath = "/this-path-does-not-exist";
+
+        given()
+                .when()
+                .get(invalidPath)
+                .then()
+                .statusCode(404)
+                .contentType(ContentType.JSON)
+                .body("status", equalTo(404));
+    }
 }
