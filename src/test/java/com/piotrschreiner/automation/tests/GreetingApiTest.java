@@ -28,4 +28,19 @@ public class GreetingApiTest extends TestBase {
                 .body("id", notNullValue())
                 .body("content", equalTo("Hello, World!"));
     }
+
+    @Test
+    @DisplayName("API-GET-002: Should return status 200 and custom content based on 'name' parameter")
+    void testGetGreetingWithNameParameter() {
+        final String name = "AutomationTester";
+
+        given()
+                .queryParam("name", name)
+                .when()
+                .get("/greeting")
+                .then()
+                .statusCode(200)
+                .contentType(ContentType.JSON)
+                .body("content", equalTo("Hello, " + name + "!"));
+    }
 }

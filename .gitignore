@@ -1,0 +1,14 @@
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# macOS files
+.DS_Store
+
+# Maven artifacts
+target/
+*.class
+*.txt
+*.xml
