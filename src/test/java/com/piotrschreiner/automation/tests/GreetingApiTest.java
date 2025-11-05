@@ -57,4 +57,17 @@ public class GreetingApiTest extends TestBase {
                 .contentType(ContentType.JSON)
                 .body("status", equalTo(404));
     }
+
+    @Test
+    @DisplayName("API-POST-001: Should return 405 Method Not Allowed for POST requests")
+    @Tag("Negative")
+    void testMethodNotAllowedForPost() {
+        given()
+                .body("")
+                .when()
+                .post("/greeting")
+                .then()
+                .statusCode(405)
+                .header("Allow", equalTo("GET"));
+    }
 }
