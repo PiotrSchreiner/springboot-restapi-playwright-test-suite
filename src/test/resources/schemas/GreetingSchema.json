@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/greeting.schema.json",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "The unique ID for the greeting."
+    },
+    "content": {
+      "type": "string",
+      "description": "The content of the greeting message."
+    }
+  },
+  "required": ["id", "content"]
+}

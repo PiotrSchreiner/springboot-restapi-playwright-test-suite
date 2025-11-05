@@ -1,6 +1,7 @@
 package com.piotrschreiner.automation.tests;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
@@ -69,5 +70,17 @@ public class GreetingApiTest extends TestBase {
                 .then()
                 .statusCode(405)
                 .header("Allow", equalTo("GET"));
+    }
+
+    @Test
+    @DisplayName("API-SCHM-001: Should validate the JSON response against the predefined schema contract")
+    @Tag("Contract")
+    void testResponseSchemaContract() {
+        given()
+                .when()
+                .get("/greeting")
+                .then()
+                .statusCode(200)
+                .body(matchesJsonSchemaInClasspath("schemas/GreetingSchema.json"));
     }
 }
