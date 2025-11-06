@@ -15,4 +15,8 @@ public class GreetingActions extends BaseActions {
     public String getGreetingText() {
         return greetingPage.getBodyLocator().textContent();
     }
+
+    public void navigateToGreetingWithName(String name) {
+        page.navigate("http://localhost:8080/greeting?name=" + name);
+    }
 }
