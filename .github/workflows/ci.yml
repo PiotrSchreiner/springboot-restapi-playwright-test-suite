@@ -21,14 +21,15 @@ jobs:
           distribution: "temurin"
           cache: "maven"
 
+      - name: Install Playwright Dependencies
+        run: sudo mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install-deps"
+
       - name: Build and Package Backend JAR
         run: mvn clean package -DskipTests
 
       - name: Start Spring Boot Application in Background
         run: |
-          # Startet die JAR im Hintergrund (&)
           java -jar target/*.jar &
-          # Wartet kurz, um sicherzustellen, dass der Server gestartet ist (Health Check)
           sleep 10
         shell: bash
 
