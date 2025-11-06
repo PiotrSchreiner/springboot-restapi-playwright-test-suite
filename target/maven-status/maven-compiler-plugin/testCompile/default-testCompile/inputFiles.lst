@@ -1,5 +1,9 @@
+/Users/piotrschreiner/Builds/springboot-restapi-playwright-test-suite/src/test/java/com/piotrschreiner/automation/actions/BaseActions.java
+/Users/piotrschreiner/Builds/springboot-restapi-playwright-test-suite/src/test/java/com/piotrschreiner/automation/actions/GreetingActions.java
 /Users/piotrschreiner/Builds/springboot-restapi-playwright-test-suite/src/test/java/com/piotrschreiner/automation/config/PlaywrightTestBase.java
 /Users/piotrschreiner/Builds/springboot-restapi-playwright-test-suite/src/test/java/com/piotrschreiner/automation/config/TestBase.java
 /Users/piotrschreiner/Builds/springboot-restapi-playwright-test-suite/src/test/java/com/piotrschreiner/automation/pages/BasePage.java
+/Users/piotrschreiner/Builds/springboot-restapi-playwright-test-suite/src/test/java/com/piotrschreiner/automation/pages/GreetingPage.java
 /Users/piotrschreiner/Builds/springboot-restapi-playwright-test-suite/src/test/java/com/piotrschreiner/automation/tests/CheckPlaywrightSetupTest.java
 /Users/piotrschreiner/Builds/springboot-restapi-playwright-test-suite/src/test/java/com/piotrschreiner/automation/tests/GreetingApiTest.java
+/Users/piotrschreiner/Builds/springboot-restapi-playwright-test-suite/src/test/java/com/piotrschreiner/automation/tests/GreetingE2ETest.java
