@@ -19,4 +19,11 @@ public class GreetingActions extends BaseActions {
     public void navigateToGreetingWithName(String name) {
         page.navigate("http://localhost:8080/greeting?name=" + name);
     }
+
+    public long measureLoadTime() {
+        long startTime = System.currentTimeMillis();
+        page.navigate("http://localhost:8080/greeting");
+        long endTime = System.currentTimeMillis();
+        return endTime - startTime;
+    }
 }
